@@ -8,20 +8,20 @@ const featuredVideos = [
   {
     id: 1,
     videoId: "AlRfDBPqy_I",
-    title: "Avventura sulle Alpi",
-    description: "Un'escursione tra le vette più alte"
+    title: "La Prima Volta dei Cervi 🦌",
+    description: "Una reazione emozionante all'incontro con i cervi in natura"
   },
   {
     id: 2,
     videoId: "wQrx2422wD8",
-    title: "La Vita degli Stambecchi",
-    description: "Documentario sulla fauna alpina"
+    title: "Esplorazione Alpina",
+    description: "Avventure e scoperte tra le montagne"
   },
   {
     id: 3,
     videoId: "VqqxMAQJ0oo",
-    title: "Tramonto in Montagna",
-    description: "Le meraviglie di un tramonto alpino"
+    title: "Fauna Selvatica",
+    description: "Incontri ravvicinati con gli animali delle Alpi"
   },
 ];
 

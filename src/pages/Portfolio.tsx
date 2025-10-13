@@ -32,24 +32,24 @@ const portfolioItems = [
     id: 4,
     type: "video",
     videoId: "AlRfDBPqy_I",
-    title: "Avventura sulle Alpi",
-    description: "Un'escursione tra le vette più alte alla ricerca della fauna alpina.",
+    title: "La Prima Volta dei Cervi 🦌",
+    description: "Una reazione emozionante all'incontro con i cervi in natura - un momento magico e indimenticabile.",
     category: "Video"
   },
   {
     id: 5,
     type: "video",
     videoId: "wQrx2422wD8",
-    title: "La Vita degli Stambecchi",
-    description: "Documentario sulla vita quotidiana degli stambecchi nelle Alpi.",
+    title: "Esplorazione Alpina",
+    description: "Avventure e scoperte tra le montagne, alla ricerca della bellezza selvaggia.",
     category: "Video"
   },
   {
     id: 6,
     type: "video",
     videoId: "VqqxMAQJ0oo",
-    title: "Tramonto in Montagna",
-    description: "Le meraviglie di un tramonto alpino con la fauna locale.",
+    title: "Fauna Selvatica",
+    description: "Incontri ravvicinati con gli animali delle Alpi nel loro habitat naturale.",
     category: "Video"
   },
 ];
