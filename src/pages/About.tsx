@@ -1,11 +1,8 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Camera, Mountain, Heart } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
@@ -63,8 +60,6 @@ const About = () => {
           </div>
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };

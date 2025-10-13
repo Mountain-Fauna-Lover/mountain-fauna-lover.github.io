@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import wildlifeDeer from "@/assets/wildlife-deer.jpg";
 import wildlifeGoat from "@/assets/wildlife-goat.jpg";
 import wildlifeFox from "@/assets/wildlife-fox.jpg";
@@ -31,7 +29,6 @@ const portfolioItems = [
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
@@ -71,8 +68,6 @@ const Portfolio = () => {
           </div>
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };

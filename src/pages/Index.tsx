@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Youtube, Instagram } from "lucide-react";
 import { TbBrandTiktok } from "react-icons/tb";
@@ -12,7 +10,6 @@ import wildlifeFox from "@/assets/wildlife-fox.jpg";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -145,8 +142,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };

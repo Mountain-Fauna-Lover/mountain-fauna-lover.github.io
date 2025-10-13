@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Calendar, ArrowRight } from "lucide-react";
 
 const blogPosts = [
@@ -32,7 +30,6 @@ const blogPosts = [
 const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
@@ -82,8 +79,6 @@ const Blog = () => {
           </div>
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };
