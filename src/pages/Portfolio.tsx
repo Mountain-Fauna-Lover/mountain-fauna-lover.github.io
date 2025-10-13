@@ -31,7 +31,7 @@ const portfolioItems = [
   {
     id: 4,
     type: "video",
-    videoId: "dQw4w9WgXcQ", // Sostituisci con i tuoi video ID YouTube reali
+    videoId: "AlRfDBPqy_I",
     title: "Avventura sulle Alpi",
     description: "Un'escursione tra le vette più alte alla ricerca della fauna alpina.",
     category: "Video"
@@ -39,7 +39,7 @@ const portfolioItems = [
   {
     id: 5,
     type: "video",
-    videoId: "jNQXAC9IVRw", // Sostituisci con i tuoi video ID YouTube reali
+    videoId: "wQrx2422wD8",
     title: "La Vita degli Stambecchi",
     description: "Documentario sulla vita quotidiana degli stambecchi nelle Alpi.",
     category: "Video"
@@ -47,7 +47,7 @@ const portfolioItems = [
   {
     id: 6,
     type: "video",
-    videoId: "9bZkp7q19f0", // Sostituisci con i tuoi video ID YouTube reali
+    videoId: "VqqxMAQJ0oo",
     title: "Tramonto in Montagna",
     description: "Le meraviglie di un tramonto alpino con la fauna locale.",
     category: "Video"

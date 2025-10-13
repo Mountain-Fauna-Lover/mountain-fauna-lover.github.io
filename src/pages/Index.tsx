@@ -7,19 +7,19 @@ import heroMountain from "@/assets/hero-mountain.jpg";
 const featuredVideos = [
   {
     id: 1,
-    videoId: "dQw4w9WgXcQ", // Sostituisci con i tuoi video ID YouTube reali
+    videoId: "AlRfDBPqy_I",
     title: "Avventura sulle Alpi",
     description: "Un'escursione tra le vette più alte"
   },
   {
     id: 2,
-    videoId: "jNQXAC9IVRw", // Sostituisci con i tuoi video ID YouTube reali
+    videoId: "wQrx2422wD8",
     title: "La Vita degli Stambecchi",
     description: "Documentario sulla fauna alpina"
   },
   {
     id: 3,
-    videoId: "9bZkp7q19f0", // Sostituisci con i tuoi video ID YouTube reali
+    videoId: "VqqxMAQJ0oo",
     title: "Tramonto in Montagna",
     description: "Le meraviglie di un tramonto alpino"
   },
