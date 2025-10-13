@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Mountain className="h-6 w-6 text-primary" />
-              <span className="font-serif text-lg font-bold">Mountain & Fauna</span>
+              <span className="font-serif text-lg font-bold">Mountain & Fauna Lover</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Esplorando la bellezza della montagna e della fauna selvatica attraverso l'obiettivo.

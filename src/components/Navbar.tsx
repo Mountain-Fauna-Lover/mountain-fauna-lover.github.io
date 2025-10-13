@@ -13,7 +13,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <Mountain className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
             <span className="font-serif text-xl font-bold text-foreground">
-              Mountain & Fauna
+              Mountain & Fauna Lover
             </span>
           </Link>
           

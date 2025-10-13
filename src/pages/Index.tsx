@@ -42,7 +42,7 @@ const Index = () => {
         
         <div className="relative z-10 container mx-auto px-6 text-center">
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fade-in">
-            Mountain & Fauna
+            Mountain & Fauna Lover
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in">
             Esplorando la bellezza selvaggia delle Alpi
