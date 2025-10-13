@@ -10,14 +10,31 @@ const About = () => {
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
               Chi Sono
             </h1>
-            <p className="text-xl text-muted-foreground mb-16 leading-relaxed">
-              Un appassionato di montagna e fauna selvatica che condivide la bellezza della natura.
+            <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
+              Simone Mattioli - Fondatore di Mountain & Fauna Lover
+            </p>
+            <p className="text-lg text-muted-foreground mb-16 leading-relaxed">
+              Junior Software Engineer | Content Creator | Appassionato di montagna e fauna selvatica
             </p>
             
             <div className="prose prose-lg max-w-none">
               <p className="text-foreground leading-relaxed mb-8">
-                La mia passione per la montagna e la fauna selvatica è nata durante le mie prime escursioni nelle Alpi. 
-                Ogni uscita è un'opportunità per scoprire nuove meraviglie naturali e documentare momenti unici della vita selvatica.
+                Sono Simone Mattioli, nato il 28 luglio 2003 a Rovereto, in Trentino-Alto Adige. 
+                La mia passione per la montagna e la fauna selvatica è nata crescendo tra le meravigliose 
+                Alpi trentine, dove ho sviluppato un profondo rispetto e amore per la natura.
+              </p>
+              
+              <p className="text-foreground leading-relaxed mb-8">
+                Sono un Junior Software Engineer e Content Creator, e ho unito la mia passione per la 
+                tecnologia con l'amore per la natura creando Mountain & Fauna Lover. Attraverso questo 
+                progetto, condivido le mie avventure in montagna e gli incontri con la fauna selvatica 
+                su YouTube, Instagram e TikTok.
+              </p>
+              
+              <p className="text-foreground leading-relaxed mb-8">
+                Collaboro con Swarovski Optik, utilizzando la loro eccellente attrezzatura ottica per 
+                catturare momenti unici della fauna alpina. Ogni uscita è un'opportunità per scoprire 
+                nuove meraviglie naturali e documentare la vita selvatica nel suo habitat naturale.
               </p>
               
               <div className="grid md:grid-cols-3 gap-8 my-12">
@@ -47,14 +64,29 @@ const About = () => {
               </div>
               
               <p className="text-foreground leading-relaxed mb-8">
-                Attraverso i miei contenuti su YouTube, Instagram e TikTok, condivido le mie avventure e cerco di 
-                sensibilizzare il pubblico sull'importanza della conservazione ambientale. Ogni incontro con la fauna 
-                selvatica è un privilegio che documento con rispetto e ammirazione.
+                Come Software Engineer, porto anche un approccio tecnologico alla fotografia naturalistica 
+                e alla creazione di contenuti. Utilizzo droni (DJI Mavic Mini), smartphone di ultima 
+                generazione (iPhone 13 Pro Max) e ottiche professionali Swarovski per catturare immagini 
+                e video di alta qualità.
+              </p>
+              
+              <h3 className="font-serif text-2xl font-bold mb-4 mt-12">La Mia Attrezzatura</h3>
+              <ul className="list-disc list-inside space-y-2 mb-8 text-foreground">
+                <li>DJI Mavic Mini - per riprese aeree spettacolari</li>
+                <li>iPhone 13 Pro Max - fotografia e video mobile</li>
+                <li>Swarovski Optik Module 115 - per osservazioni dettagliate</li>
+                <li>Swarovski Optik Binocoli 10x42 - per avvistamenti a lunga distanza</li>
+              </ul>
+              
+              <p className="text-foreground leading-relaxed mb-8">
+                Attraverso i miei contenuti, voglio ispirare gli altri a connettersi con la natura, 
+                rispettare gli ecosistemi montani e apprezzare la straordinaria biodiversità delle Alpi. 
+                Ogni video, ogni foto, racconta una storia di bellezza, rispetto e meraviglia per il mondo naturale.
               </p>
               
               <p className="text-foreground leading-relaxed">
-                Il mio obiettivo è ispirare gli altri a connettersi con la natura, rispettare gli ecosistemi montani 
-                e apprezzare la straordinaria biodiversità che ci circonda.
+                Il mio obiettivo è sensibilizzare il pubblico sull'importanza della conservazione ambientale 
+                e mostrare che la montagna e la fauna selvatica sono tesori da proteggere per le generazioni future.
               </p>
             </div>
           </div>
