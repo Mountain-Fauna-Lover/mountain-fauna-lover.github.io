@@ -1,11 +1,29 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Youtube, Instagram } from "lucide-react";
+import { ArrowRight, Youtube, Instagram, Play } from "lucide-react";
 import { TbBrandTiktok } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import heroMountain from "@/assets/hero-mountain.jpg";
-import wildlifeDeer from "@/assets/wildlife-deer.jpg";
-import wildlifeGoat from "@/assets/wildlife-goat.jpg";
-import wildlifeFox from "@/assets/wildlife-fox.jpg";
+
+const featuredVideos = [
+  {
+    id: 1,
+    videoId: "dQw4w9WgXcQ", // Sostituisci con i tuoi video ID YouTube reali
+    title: "Avventura sulle Alpi",
+    description: "Un'escursione tra le vette più alte"
+  },
+  {
+    id: 2,
+    videoId: "jNQXAC9IVRw", // Sostituisci con i tuoi video ID YouTube reali
+    title: "La Vita degli Stambecchi",
+    description: "Documentario sulla fauna alpina"
+  },
+  {
+    id: 3,
+    videoId: "9bZkp7q19f0", // Sostituisci con i tuoi video ID YouTube reali
+    title: "Tramonto in Montagna",
+    description: "Le meraviglie di un tramonto alpino"
+  },
+];
 
 const Index = () => {
   return (
@@ -57,41 +75,38 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                <img 
-                  src={wildlifeDeer} 
-                  alt="Deer in misty forest"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-semibold mb-2">Cervo nella Nebbia</h3>
-              <p className="text-muted-foreground text-sm">Un incontro magico all'alba</p>
-            </div>
-            
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                <img 
-                  src={wildlifeGoat} 
-                  alt="Mountain goat on rocks"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-semibold mb-2">Stambecco Alpino</h3>
-              <p className="text-muted-foreground text-sm">Maestoso abitante delle vette</p>
-            </div>
-            
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                <img 
-                  src={wildlifeFox} 
-                  alt="Fox in alpine meadow"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-semibold mb-2">Volpe nei Prati</h3>
-              <p className="text-muted-foreground text-sm">La bellezza della primavera alpina</p>
-            </div>
+            {featuredVideos.map((video) => (
+              <a
+                key={video.id}
+                href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <div className="relative overflow-hidden rounded-lg aspect-[16/9] mb-4 bg-black">
+                  <img 
+                    src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
+                    alt={video.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(e) => {
+                      e.currentTarget.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                    <div className="bg-primary/90 rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
+                      <Play className="h-8 w-8 text-white fill-white" />
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <Youtube className="h-6 w-6 text-white drop-shadow-lg" />
+                  </div>
+                </div>
+                <h3 className="font-serif text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {video.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">{video.description}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
