@@ -50,6 +50,14 @@ const Navbar = () => {
             >
               Blog
             </Link>
+            <Link 
+              to="/links" 
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/links") ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              Links
+            </Link>
           </div>
         </div>
       </div>

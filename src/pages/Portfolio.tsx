@@ -1,10 +1,12 @@
 import wildlifeDeer from "@/assets/wildlife-deer.jpg";
 import wildlifeGoat from "@/assets/wildlife-goat.jpg";
 import wildlifeFox from "@/assets/wildlife-fox.jpg";
+import { Play } from "lucide-react";
 
 const portfolioItems = [
   {
     id: 1,
+    type: "image",
     image: wildlifeDeer,
     title: "Cervo nella Nebbia",
     description: "Un cervo maestoso emerge dalla nebbia mattutina in una radura alpina.",
@@ -12,6 +14,7 @@ const portfolioItems = [
   },
   {
     id: 2,
+    type: "image",
     image: wildlifeGoat,
     title: "Stambecco Alpino",
     description: "Uno stambecco si staglia contro il cielo azzurro su una cresta rocciosa.",
@@ -19,10 +22,35 @@ const portfolioItems = [
   },
   {
     id: 3,
+    type: "image",
     image: wildlifeFox,
     title: "Volpe nei Prati",
     description: "Una volpe rossa tra i fiori di un prato alpino in primavera.",
     category: "Fauna"
+  },
+  {
+    id: 4,
+    type: "video",
+    videoId: "dQw4w9WgXcQ", // Sostituisci con i tuoi video ID YouTube reali
+    title: "Avventura sulle Alpi",
+    description: "Un'escursione tra le vette più alte alla ricerca della fauna alpina.",
+    category: "Video"
+  },
+  {
+    id: 5,
+    type: "video",
+    videoId: "jNQXAC9IVRw", // Sostituisci con i tuoi video ID YouTube reali
+    title: "La Vita degli Stambecchi",
+    description: "Documentario sulla vita quotidiana degli stambecchi nelle Alpi.",
+    category: "Video"
+  },
+  {
+    id: 6,
+    type: "video",
+    videoId: "9bZkp7q19f0", // Sostituisci con i tuoi video ID YouTube reali
+    title: "Tramonto in Montagna",
+    description: "Le meraviglie di un tramonto alpino con la fauna locale.",
+    category: "Video"
   },
 ];
 
@@ -46,20 +74,50 @@ const Portfolio = () => {
                   key={item.id}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
-                    <img 
-                      src={item.image} 
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <span className="text-xs font-medium bg-primary/80 px-3 py-1 rounded-full">
-                          {item.category}
-                        </span>
+                  {item.type === "image" ? (
+                    <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                          <span className="text-xs font-medium bg-primary/80 px-3 py-1 rounded-full">
+                            {item.category}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <a 
+                      href={`https://www.youtube.com/watch?v=${item.videoId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <div className="relative overflow-hidden rounded-lg aspect-[16/9] mb-4 bg-black">
+                        <img 
+                          src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          onError={(e) => {
+                            e.currentTarget.src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                          <div className="bg-primary/90 rounded-full p-4 group-hover:scale-110 transition-transform duration-300">
+                            <Play className="h-8 w-8 text-white fill-white" />
+                          </div>
+                        </div>
+                        <div className="absolute top-4 right-4">
+                          <span className="text-xs font-medium bg-red-600 text-white px-3 py-1 rounded-full">
+                            {item.category}
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  )}
                   <h3 className="font-serif text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
