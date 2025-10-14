@@ -108,7 +108,6 @@ const Portfolio = () => {
                       href={`https://www.youtube.com/watch?v=${item.videoId}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block"
                     >
                       <div className="relative overflow-hidden rounded-lg aspect-[16/9] mb-4 bg-black">
                         <img 
