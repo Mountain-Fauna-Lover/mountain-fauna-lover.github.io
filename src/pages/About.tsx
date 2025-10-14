@@ -1,19 +1,33 @@
 import { Camera, Mountain, Heart } from "lucide-react";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
-      
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
+      {/* Hero Image Section */}
+      <div className="relative h-[60vh] overflow-hidden">
+        <img 
+          src={aboutHero} 
+          alt="Simone Mattioli - Mountain & Fauna Lover nelle Alpi trentine"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-background"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+          <div className="container mx-auto max-w-4xl">
+            <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-2 drop-shadow-lg">
               Chi Sono
             </h1>
-            <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
               Simone Mattioli - Fondatore di Mountain & Fauna Lover
             </p>
-            <p className="text-lg text-muted-foreground mb-16 leading-relaxed">
+          </div>
+        </div>
+      </div>
+      
+      <main className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
               Junior Software Engineer | Content Creator | Appassionato di montagna e fauna selvatica
             </p>
             
