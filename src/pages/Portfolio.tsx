@@ -65,9 +65,9 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Portfolio - Fotografie e Video di Fauna Selvatica Alpina"
-        description="Galleria fotografica e video di fauna selvatica delle Alpi: cervi, stambecchi, volpi e altri animali alpini immortalati da Simone Mattioli. Scopri la bellezza della natura trentina."
-        keywords="portfolio fotografia naturalistica, foto fauna selvatica, video animali alpini, cervi alpi, stambecchi trentino, volpi alpine, galleria fotografica natura, wildlife portfolio"
+        title="Portfolio Avvistamenti Cervi e Fauna Parco Stelvio - Video e Foto Wildlife Trentino"
+        description="Portfolio completo di avvistamenti fauna selvatica nel Parco Nazionale dello Stelvio e Val di Rabbi. Video bramito cervi, fotografie stambecchi, camosci, volpi alpine, aquile reali. Escursioni in ebike per wildlife photography in Trentino. Documentazione fauna alpina delle Alpi trentine by Simone Mattioli."
+        keywords="portfolio avvistamenti cervi, video bramito parco stelvio, foto stambecchi val di rabbi, wildlife portfolio trentino, gallery fauna alpina, video cervi youtube trentino, fotografie wildlife alpi, avvistamenti ebike trentino, bramito cervi settembre video, stambecchi fotografia alpina, volpi alpine portfolio, camosci trentino foto, marmotte alpi immagini, aquila reale trentino foto, paesaggi parco stelvio, escursioni fotografiche wildlife, video fauna selvatica youtube, galleria natura alpina, fotografia naturalistica professionale, wildlife ebike adventures"
         canonical="/portfolio"
         structuredData={breadcrumb}
       />

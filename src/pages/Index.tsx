@@ -4,7 +4,7 @@ import { TbBrandTiktok } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import heroMountain from "@/assets/hero-mountain.jpg";
 import SEO from "@/components/SEO";
-import { websiteStructuredData, organizationStructuredData, personStructuredData } from "@/data/structuredData";
+import { websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData } from "@/data/structuredData";
 
 const featuredVideos = [
   {
@@ -30,15 +30,15 @@ const featuredVideos = [
 const Index = () => {
   const combinedStructuredData = {
     "@context": "https://schema.org",
-    "@graph": [websiteStructuredData, organizationStructuredData, personStructuredData]
+    "@graph": [websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData]
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Mountain & Fauna Lover - Fotografia Naturalistica Alpi Trentine"
-        description="Simone Mattioli, fotografo naturalistico e content creator trentino. Scopri le meraviglie della fauna selvatica alpina: cervi, stambecchi, volpi. Video su YouTube, Instagram e TikTok dedicati alla conservazione ambientale."
-        keywords="fotografia naturalistica, fauna selvatica, alpi trentine, cervi, stambecchi, volpi, wildlife photography, montagna, Simone Mattioli, Rovereto, Trentino Alto Adige, Swarovski Optik, YouTube natura, conservazione ambientale, animali alpini"
+        title="Mountain & Fauna Lover - Avvistamenti Cervi Parco Nazionale Stelvio e Val di Rabbi"
+        description="Simone Mattioli documenta avvistamenti di cervi, stambecchi e fauna selvatica nel Parco Nazionale dello Stelvio e Val di Rabbi. Fotografia naturalistica, escursioni in ebike in Trentino, video su YouTube del bramito dei cervi e wildlife delle Alpi. Content creator specializzato in natura alpina trentina."
+        keywords="avvistamenti cervi trentino, parco nazionale dello stelvio fauna, val di rabbi wildlife, bramito cervi alpi, fotografia naturalistica trentino, stambecchi parco stelvio, volpi alpine, ebike montagna trentino, escursioni wildlife trentino, cervi val di rabbi, fauna selvatica alpi trentine, dove vedere cervi trentino, wildlife photography stelvio, camosci trentino, marmotte alpine, aquila reale trentino, Simone Mattioli fotografo, avvistamenti fauna alpina, trekking wildlife trentino, natura parco stelvio, rovereto montagna, swarovski optik wildlife, video cervi youtube, bramito settembre trentino, ebike parco stelvio, conservazione fauna alpina, animali selvatici trentino, fotografia cervi, capriolo trentino"
         canonical="/"
         structuredData={combinedStructuredData}
       />

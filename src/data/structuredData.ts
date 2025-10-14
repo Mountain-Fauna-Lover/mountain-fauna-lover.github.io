@@ -141,3 +141,92 @@ export const imageObjectStructuredData = (image: {
     "name": image.author
   }
 });
+
+// FAQ Schema for wildlife photography and mountain activities
+export const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Dove avvistare cervi in Trentino?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "I cervi sono comunemente avvistabili nel Parco Nazionale dello Stelvio, in Val di Rabbi, e nelle valli trentine durante l'alba e il tramonto. Il periodo del bramito (settembre-ottobre) è ideale per avvistamenti."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Come fotografare la fauna selvatica alpina?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Per fotografare fauna selvatica come cervi, stambecchi e volpi è essenziale: muoversi all'alba o al tramonto, utilizzare teleobiettivi (300mm+), rispettare le distanze di sicurezza, e conoscere i comportamenti degli animali."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Quando è il periodo migliore per avvistamenti in montagna?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "L'autunno (settembre-novembre) è eccellente per il bramito dei cervi. La primavera (aprile-giugno) offre ottimi avvistamenti di stambecchi e marmotte. L'inverno permette di seguire le tracce sulla neve."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Si può usare l'ebike per wildlife watching in Trentino?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sì, l'ebike è ottima per raggiungere zone remote in Trentino e nel Parco dello Stelvio. Permette di coprire più territorio silenziosamente, ideale per avvistamenti di fauna selvatica nelle prime ore del mattino."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Quale attrezzatura serve per wildlife photography?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Essenziali: teleobiettivo 300-600mm, treppiede stabile, binocolo o cannocchiale (come Swarovski Optik), abbigliamento mimetico, e conoscenza del territorio montano trentino."
+      }
+    }
+  ]
+};
+
+// Place Schema for key locations
+export const parcoStelvioPlaceData = {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  name: "Parco Nazionale dello Stelvio",
+  description: "Area protetta ideale per avvistamenti di cervi, stambecchi, camosci e altra fauna selvatica alpina. Habitat naturale per wildlife photography e escursioni in ebike.",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 46.5167,
+    longitude: 10.6000
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Trentino-Alto Adige",
+    addressCountry: "IT"
+  },
+  touristType: "Wildlife enthusiasts, nature photographers, mountain lovers"
+};
+
+export const valDiRabbiPlaceData = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  name: "Val di Rabbi",
+  description: "Valle alpina trentina nel Parco Nazionale dello Stelvio, rinomata per avvistamenti di cervi, stambecchi e fauna selvatica. Ideale per escursioni in ebike e fotografia naturalistica.",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 46.4167,
+    longitude: 10.8333
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Trentino-Alto Adige",
+    addressLocality: "Val di Rabbi",
+    addressCountry: "IT"
+  },
+  containedInPlace: {
+    "@type": "Place",
+    name: "Parco Nazionale dello Stelvio"
+  }
+};

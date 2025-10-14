@@ -17,9 +17,9 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Chi Sono - Simone Mattioli"
-        description="Simone Mattioli, nato a Rovereto nel 2003, è un Junior Software Engineer e fotografo naturalistico specializzato nella fauna alpina. Collabora con Swarovski Optik e condivide contenuti su YouTube, Instagram e TikTok."
-        keywords="Simone Mattioli, fotografo naturalistico, wildlife photographer, Rovereto, Trentino, fauna alpina, cervi, stambecchi, Swarovski Optik, content creator, software engineer, conservazione ambientale"
+        title="Simone Mattioli - Fotografo Naturalista Parco Stelvio e Val di Rabbi"
+        description="Simone Mattioli, Junior Software Engineer e content creator specializzato in avvistamenti fauna nel Parco Nazionale dello Stelvio e Val di Rabbi. Fotografia di cervi, stambecchi e wildlife alpino. Escursioni in ebike in Trentino per documentare il bramito dei cervi e la fauna selvatica. Collaborazioni Swarovski Optik, YouTube, Instagram, TikTok."
+        keywords="Simone Mattioli fotografo, wildlife photographer trentino, avvistamenti cervi parco stelvio, fotografo val di rabbi, content creator natura alpina, ebike wildlife trentino, bramito cervi fotografo, stambecchi fotografia, Swarovski Optik ambassador, YouTuber fauna selvatica, fotografo naturalistico rovereto, escursioni fotografiche trentino, Junior Software Engineer natura, video cervi youtube, instagram wildlife trentino, tiktok natura alpina, guida avvistamenti trentino, fotografia cervi alpi, parco stelvio content creator"
         canonical="/about"
         ogType="profile"
         structuredData={combinedStructuredData}
