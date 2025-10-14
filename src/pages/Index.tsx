@@ -3,6 +3,8 @@ import { ArrowRight, Youtube, Instagram, Play } from "lucide-react";
 import { TbBrandTiktok } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import heroMountain from "@/assets/hero-mountain.jpg";
+import SEO from "@/components/SEO";
+import { websiteStructuredData, organizationStructuredData, personStructuredData } from "@/data/structuredData";
 
 const featuredVideos = [
   {
@@ -26,15 +28,26 @@ const featuredVideos = [
 ];
 
 const Index = () => {
+  const combinedStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [websiteStructuredData, organizationStructuredData, personStructuredData]
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      
+      <SEO
+        title="Mountain & Fauna Lover - Fotografia Naturalistica Alpi Trentine"
+        description="Simone Mattioli, fotografo naturalistico e content creator trentino. Scopri le meraviglie della fauna selvatica alpina: cervi, stambecchi, volpi. Video su YouTube, Instagram e TikTok dedicati alla conservazione ambientale."
+        keywords="fotografia naturalistica, fauna selvatica, alpi trentine, cervi, stambecchi, volpi, wildlife photography, montagna, Simone Mattioli, Rovereto, Trentino Alto Adige, Swarovski Optik, YouTube natura, conservazione ambientale, animali alpini"
+        canonical="/"
+        structuredData={combinedStructuredData}
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src={heroMountain} 
-            alt="Majestic mountain landscape with wildlife" 
+            alt="Panorama maestoso delle Alpi trentine con montagne innevate e fauna selvatica alpina - Mountain & Fauna Lover" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-background"></div>
@@ -86,7 +99,7 @@ const Index = () => {
                 <div className="relative overflow-hidden rounded-lg aspect-[16/9] mb-4 bg-black">
                   <img 
                     src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
-                    alt={video.title}
+                    alt={`${video.title} - Video di fauna selvatica e natura alpina di Simone Mattioli`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;

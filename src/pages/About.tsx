@@ -1,9 +1,29 @@
 import { Camera, Mountain, Heart } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
+import SEO from "@/components/SEO";
+import { personStructuredData, breadcrumbStructuredData } from "@/data/structuredData";
 
 const About = () => {
+  const breadcrumb = breadcrumbStructuredData([
+    { name: "Home", url: "/" },
+    { name: "Chi Sono", url: "/about" }
+  ]);
+
+  const combinedStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [personStructuredData, breadcrumb]
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Chi Sono - Simone Mattioli"
+        description="Simone Mattioli, nato a Rovereto nel 2003, è un Junior Software Engineer e fotografo naturalistico specializzato nella fauna alpina. Collabora con Swarovski Optik e condivide contenuti su YouTube, Instagram e TikTok."
+        keywords="Simone Mattioli, fotografo naturalistico, wildlife photographer, Rovereto, Trentino, fauna alpina, cervi, stambecchi, Swarovski Optik, content creator, software engineer, conservazione ambientale"
+        canonical="/about"
+        ogType="profile"
+        structuredData={combinedStructuredData}
+      />
       {/* Hero Image Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img 

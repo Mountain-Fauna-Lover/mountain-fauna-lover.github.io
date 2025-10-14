@@ -1,10 +1,24 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import SEO from "@/components/SEO";
+import { breadcrumbStructuredData } from "@/data/structuredData";
 
 const Blog = () => {
+  const breadcrumb = breadcrumbStructuredData([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Blog - Storie e Avventure dalla Montagna"
+        description="Articoli, racconti e consigli sulla fotografia naturalistica, avvistamenti di fauna selvatica alpina, escursioni in montagna e conservazione ambientale nelle Alpi trentine."
+        keywords="blog natura, articoli fauna selvatica, storie montagna, fotografia naturalistica tutorial, avvistamenti cervi, escursioni trentino, conservazione ambiente, wildlife blog"
+        canonical="/blog"
+        structuredData={breadcrumb}
+      />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">

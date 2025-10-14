@@ -2,6 +2,8 @@ import wildlifeDeer from "@/assets/wildlife-deer.jpg";
 import wildlifeGoat from "@/assets/wildlife-goat.jpg";
 import wildlifeFox from "@/assets/wildlife-fox.jpg";
 import { Play } from "lucide-react";
+import SEO from "@/components/SEO";
+import { breadcrumbStructuredData, imageObjectStructuredData } from "@/data/structuredData";
 
 const portfolioItems = [
   {
@@ -55,8 +57,20 @@ const portfolioItems = [
 ];
 
 const Portfolio = () => {
+  const breadcrumb = breadcrumbStructuredData([
+    { name: "Home", url: "/" },
+    { name: "Portfolio", url: "/portfolio" }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Portfolio - Fotografie e Video di Fauna Selvatica Alpina"
+        description="Galleria fotografica e video di fauna selvatica delle Alpi: cervi, stambecchi, volpi e altri animali alpini immortalati da Simone Mattioli. Scopri la bellezza della natura trentina."
+        keywords="portfolio fotografia naturalistica, foto fauna selvatica, video animali alpini, cervi alpi, stambecchi trentino, volpi alpine, galleria fotografica natura, wildlife portfolio"
+        canonical="/portfolio"
+        structuredData={breadcrumb}
+      />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
@@ -78,7 +92,7 @@ const Portfolio = () => {
                     <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
                       <img 
                         src={item.image} 
-                        alt={item.title}
+                        alt={`${item.title} - Fotografia di ${item.description.toLowerCase()} nelle Alpi trentine di Simone Mattioli`}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -99,7 +113,7 @@ const Portfolio = () => {
                       <div className="relative overflow-hidden rounded-lg aspect-[16/9] mb-4 bg-black">
                         <img 
                           src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
-                          alt={item.title}
+                          alt={`${item.title} - ${item.description} - Video YouTube di Simone Mattioli`}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           onError={(e) => {
                             e.currentTarget.src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
