@@ -71,6 +71,44 @@ const About = () => {
                 nuove meraviglie naturali e documentare la vita selvatica nel suo habitat naturale.
               </p>
               
+              <h2 className="font-serif text-3xl font-bold mb-6 mt-16">La Mia Missione</h2>
+              <p className="text-foreground leading-relaxed mb-8">
+                Mountain & Fauna Lover nasce da un sogno: condividere la straordinaria bellezza della fauna 
+                selvatica alpina con il mondo intero. La mia missione è duplice - da un lato, voglio documentare 
+                e celebrare la ricchezza della biodiversità delle nostre Alpi, mostrando attraverso foto e video 
+                quanto sia prezioso e fragile questo ecosistema. Dall'altro, desidero ispirare le persone a 
+                sviluppare un rapporto più profondo e rispettoso con la natura.
+              </p>
+              
+              <p className="text-foreground leading-relaxed mb-8">
+                Ogni contenuto che creo è pensato per educare e sensibilizzare, ma anche per emozionare. 
+                Voglio che chi guarda i miei video o le mie foto possa sentire lo stesso brivido che provo io 
+                quando incontro un cervo nella nebbia o osservo uno stambecco su una cresta rocciosa. È questa 
+                emozione che ci spinge a proteggere ciò che amiamo.
+              </p>
+              
+              <h2 className="font-serif text-3xl font-bold mb-6 mt-12">Una Passione che Richiede Equilibrio</h2>
+              <p className="text-foreground leading-relaxed mb-8">
+                Conciliare la mia vita da Junior Software Engineer, la creazione di contenuti e le uscite in 
+                montagna non è sempre facile. Ogni alba in montagna significa svegliarsi alle 4:00, ogni video 
+                richiede ore di editing dopo una giornata di lavoro, ogni foto è il risultato di pazienza, 
+                attesa e a volte, chilometri di cammino.
+              </p>
+              
+              <p className="text-foreground leading-relaxed mb-8">
+                Ma è proprio questa sfida quotidiana che rende tutto più prezioso. Spero che possiate apprezzare 
+                non solo i contenuti finali, ma anche lo sforzo e la dedizione che ci stanno dietro. Ogni video, 
+                ogni fotografia rappresenta l'equilibrio tra il mio lavoro, la mia passione per la tecnologia e 
+                l'amore profondo per la natura. È un equilibrio delicato, ma è ciò che mi rende chi sono.
+              </p>
+              
+              <p className="text-foreground leading-relaxed mb-12">
+                Quando vedete un video alle 6 del mattino su YouTube, sappiate che probabilmente sono già in 
+                montagna da due ore. Quando leggete un articolo, sappiate che è stato scritto di sera, dopo il 
+                lavoro, con la stessa passione con cui scrivo codice di giorno. Questo progetto è la mia vita, 
+                ed è un onore poterlo condividere con voi.
+              </p>
+              
               <div className="grid md:grid-cols-3 gap-8 my-12">
                 <div className="bg-card p-6 rounded-lg shadow-sm border border-border">
                   <Camera className="h-8 w-8 text-primary mb-4" />
