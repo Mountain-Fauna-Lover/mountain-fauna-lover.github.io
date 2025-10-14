@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/AlRfDBPqy_I/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>La Prima Volta dei Cervi - Avvistamento Parco Stelvio</video:title>
+      <video:description>Emozionante primo avvistamento di cervi nel Parco Nazionale dello Stelvio</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=AlRfDBPqy_I</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/AlRfDBPqy_I</video:player_loc>
+    </video:video>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/about</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/portfolio</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mountainfaunalover.lovable.app/assets/wildlife-deer.jpg</image:loc>
+      <image:title>Cervo nella nebbia - Parco Stelvio</image:title>
+      <image:caption>Avvistamento cervo nella nebbia mattutina nelle Alpi trentine</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mountainfaunalover.lovable.app/assets/wildlife-goat.jpg</image:loc>
+      <image:title>Stambecco alpino - Val di Rabbi</image:title>
+      <image:caption>Stambecco su cresta rocciosa in Val di Rabbi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mountainfaunalover.lovable.app/assets/wildlife-fox.jpg</image:loc>
+      <image:title>Volpe rossa alpina - Trentino</image:title>
+      <image:caption>Volpe rossa tra i prati alpini trentini</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Blog Page -->
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/blog</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Links Page -->
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/links</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/blog/primo-incontro-cervi</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/blog/fotografia-naturalistica</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://mountainfaunalover.lovable.app/blog/conservazione-fauna</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

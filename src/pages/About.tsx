@@ -1,6 +1,7 @@
 import { Camera, Mountain, Heart } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { personStructuredData, breadcrumbStructuredData } from "@/data/structuredData";
 
 const About = () => {
@@ -30,6 +31,8 @@ const About = () => {
           src={aboutHero} 
           alt="Simone Mattioli - Mountain & Fauna Lover nelle Alpi trentine"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-background"></div>
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
@@ -46,6 +49,7 @@ const About = () => {
       
       <main className="py-16">
         <div className="container mx-auto px-6">
+          <Breadcrumbs items={[{ label: "Chi Sono", href: "/about" }]} />
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
               Junior Software Engineer | Content Creator | Appassionato di montagna e fauna selvatica

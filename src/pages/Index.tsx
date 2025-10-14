@@ -4,7 +4,7 @@ import { TbBrandTiktok } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import heroMountain from "@/assets/hero-mountain.jpg";
 import SEO from "@/components/SEO";
-import { websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData } from "@/data/structuredData";
+import { websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData, videoObjectStructuredData } from "@/data/structuredData";
 
 const featuredVideos = [
   {
@@ -28,9 +28,19 @@ const featuredVideos = [
 ];
 
 const Index = () => {
+  const videoStructuredDataList = featuredVideos.map(video => 
+    videoObjectStructuredData({
+      name: video.title,
+      description: video.description,
+      thumbnailUrl: `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`,
+      uploadDate: "2024-01-01",
+      embedUrl: `https://www.youtube.com/embed/${video.videoId}`
+    })
+  );
+
   const combinedStructuredData = {
     "@context": "https://schema.org",
-    "@graph": [websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData]
+    "@graph": [websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData, ...videoStructuredDataList]
   };
 
   return (
@@ -49,6 +59,8 @@ const Index = () => {
             src={heroMountain} 
             alt="Panorama maestoso delle Alpi trentine con montagne innevate e fauna selvatica alpina - Mountain & Fauna Lover" 
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-background"></div>
         </div>
@@ -101,6 +113,7 @@ const Index = () => {
                       src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
                       alt={`${video.title} - Video di fauna selvatica e natura alpina di Simone Mattioli`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
                       onError={(e) => {
                         e.currentTarget.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
                       }}

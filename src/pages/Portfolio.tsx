@@ -3,6 +3,7 @@ import wildlifeGoat from "@/assets/wildlife-goat.jpg";
 import wildlifeFox from "@/assets/wildlife-fox.jpg";
 import { Play } from "lucide-react";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { breadcrumbStructuredData, imageObjectStructuredData } from "@/data/structuredData";
 
 const portfolioItems = [
@@ -74,6 +75,7 @@ const Portfolio = () => {
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
+          <Breadcrumbs items={[{ label: "Portfolio", href: "/portfolio" }]} />
           <div className="max-w-6xl mx-auto">
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
               Portfolio
@@ -94,6 +96,7 @@ const Portfolio = () => {
                         src={item.image} 
                         alt={`${item.title} - Fotografia di ${item.description.toLowerCase()} nelle Alpi trentine di Simone Mattioli`}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -114,6 +117,7 @@ const Portfolio = () => {
                           src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
                           alt={`${item.title} - ${item.description} - Video YouTube di Simone Mattioli`}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          loading="lazy"
                           onError={(e) => {
                             e.currentTarget.src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
                           }}
