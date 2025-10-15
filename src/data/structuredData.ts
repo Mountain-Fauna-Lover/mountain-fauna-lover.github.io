@@ -230,3 +230,114 @@ export const valDiRabbiPlaceData = {
     name: "Parco Nazionale dello Stelvio"
   }
 };
+
+// Article/Blog Post Schema
+export const articleStructuredData = (article: {
+  headline: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  url: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": article.headline,
+  "description": article.description,
+  "image": article.image,
+  "datePublished": article.datePublished,
+  "dateModified": article.dateModified || article.datePublished,
+  "author": {
+    "@type": "Person",
+    "name": article.author || "Simone Mattioli",
+    "url": "https://mountainfaunalover.lovable.app/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mountain & Fauna Lover",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lovable.dev/opengraph-image-p98pqg.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": article.url
+  },
+  "inLanguage": "it-IT",
+  "keywords": "wildlife, cervi, fotografia naturalistica, trentino, parco stelvio"
+});
+
+// HowTo Schema for guides
+export const howToStructuredData = (howto: {
+  name: string;
+  description: string;
+  image?: string;
+  totalTime?: string;
+  steps: Array<{ name: string; text: string; image?: string }>;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": howto.name,
+  "description": howto.description,
+  "image": howto.image,
+  "totalTime": howto.totalTime,
+  "step": howto.steps.map((step, index) => ({
+    "@type": "HowToStep",
+    "position": index + 1,
+    "name": step.name,
+    "text": step.text,
+    "image": step.image
+  }))
+});
+
+// Review/Rating Schema
+export const reviewStructuredData = (review: {
+  itemName: string;
+  reviewBody: string;
+  ratingValue: number;
+  author?: string;
+  datePublished: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": review.itemName
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": review.ratingValue,
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Person",
+    "name": review.author || "Simone Mattioli"
+  },
+  "reviewBody": review.reviewBody,
+  "datePublished": review.datePublished
+});
+
+// Course/Educational Content Schema
+export const courseStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Wildlife Photography in the Alps",
+  "description": "Learn how to photograph alpine wildlife including deer, ibex, and foxes in their natural habitat in the Italian Alps",
+  "provider": {
+    "@type": "Person",
+    "name": "Simone Mattioli"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT10H"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+};

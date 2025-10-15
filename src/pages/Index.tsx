@@ -38,9 +38,35 @@ const Index = () => {
     })
   );
 
+  const homePageStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Mountain & Fauna Lover - Homepage",
+    "description": "Esplora la fauna selvatica delle Alpi trentine attraverso fotografie, video e guide complete",
+    "url": "https://mountainfaunalover.lovable.app",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": featuredVideos.length,
+      "itemListElement": featuredVideos.map((video, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://www.youtube.com/watch?v=${video.videoId}`
+      }))
+    }
+  };
+
   const combinedStructuredData = {
     "@context": "https://schema.org",
-    "@graph": [websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData, ...videoStructuredDataList]
+    "@graph": [
+      websiteStructuredData, 
+      organizationStructuredData, 
+      personStructuredData, 
+      faqStructuredData, 
+      parcoStelvioPlaceData, 
+      valDiRabbiPlaceData, 
+      homePageStructuredData,
+      ...videoStructuredDataList
+    ]
   };
 
   return (
@@ -66,10 +92,10 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-6 text-center">
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fade-in" itemProp="headline">
             Mountain & Fauna Lover
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in" itemProp="description">
             Esplorando la bellezza selvaggia delle Alpi
           </p>
           <div className="flex gap-4 justify-center animate-fade-in">
@@ -88,18 +114,18 @@ const Index = () => {
       </section>
       
       {/* Featured Work */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-background" itemScope itemType="https://schema.org/CreativeWork">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4" itemProp="name">
               Lavori in Evidenza
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto" itemProp="description">
               Una selezione delle mie fotografie più significative
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto" itemScope itemType="https://schema.org/ItemList">
             {featuredVideos.map((video) => (
               <div key={video.id} className="group">
                 <a

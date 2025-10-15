@@ -1,0 +1,24 @@
+{
+  "name": "Mountain & Fauna Lover - Wildlife Photography Trentino",
+  "short_name": "MFL Wildlife",
+  "description": "Avvistamenti cervi, stambecchi e fauna selvatica nel Parco Nazionale dello Stelvio e Val di Rabbi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F3EF",
+  "theme_color": "#2D5016",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["photography", "nature", "education", "lifestyle"],
+  "lang": "it",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
