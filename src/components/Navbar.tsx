@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Mountain } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const location = useLocation();
@@ -44,6 +45,7 @@ const Navbar = () => {
                 <span className="absolute inset-0 bg-primary/5 rounded-md scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
               </Link>
             ))}
+            <ThemeToggle />
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
 import wildlifeDeer from "@/assets/wildlife-deer.jpg";
 import wildlifeGoat from "@/assets/wildlife-goat.jpg";
 import wildlifeFox from "@/assets/wildlife-fox.jpg";
-import { Play } from "lucide-react";
+import { Play, Filter } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ImageLightbox from "@/components/ImageLightbox";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { breadcrumbStructuredData, imageObjectStructuredData } from "@/data/structuredData";
 
 const portfolioItems = [
@@ -58,10 +61,37 @@ const portfolioItems = [
 ];
 
 const Portfolio = () => {
+  const [selectedFilter, setSelectedFilter] = useState<string>("Tutti");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
   const breadcrumb = breadcrumbStructuredData([
     { name: "Home", url: "/" },
     { name: "Portfolio", url: "/portfolio" }
   ]);
+
+  const categories = ["Tutti", "Fauna", "Video"];
+  const filteredItems = selectedFilter === "Tutti" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === selectedFilter);
+
+  const imageItems = portfolioItems
+    .filter(item => item.type === "image")
+    .map(item => ({
+      src: item.image!,
+      title: item.title,
+      description: item.description
+    }));
+
+  const openLightbox = (id: number) => {
+    const imageIndex = imageItems.findIndex(
+      img => portfolioItems.find(item => item.image === img.src)?.id === id
+    );
+    if (imageIndex !== -1) {
+      setLightboxIndex(imageIndex);
+      setLightboxOpen(true);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -80,18 +110,37 @@ const Portfolio = () => {
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
               Portfolio
             </h1>
-            <p className="text-xl text-muted-foreground mb-16 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Una selezione dei miei migliori scatti dalla montagna.
             </p>
             
+            <div className="flex flex-wrap gap-2 mb-12 items-center">
+              <Filter className="h-5 w-5 text-muted-foreground" />
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedFilter === category ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedFilter(category)}
+                  className="transition-all duration-300"
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {portfolioItems.map((item) => (
+              {filteredItems.map((item, idx) => (
                 <div 
                   key={item.id}
-                  className="group cursor-pointer"
+                  className="group cursor-pointer animate-fade-in"
+                  style={{ animationDelay: `${idx * 50}ms` }}
                 >
                   {item.type === "image" ? (
-                    <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
+                    <div 
+                      className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4"
+                      onClick={() => openLightbox(item.id)}
+                    >
                       <img 
                         src={item.image} 
                         alt={`${item.title} - Fotografia di ${item.description.toLowerCase()} nelle Alpi trentine di Simone Mattioli`}
@@ -143,6 +192,14 @@ const Portfolio = () => {
           </div>
         </div>
       </main>
+
+      {lightboxOpen && (
+        <ImageLightbox
+          images={imageItems}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   );
 };
