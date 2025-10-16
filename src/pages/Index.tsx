@@ -96,7 +96,7 @@ const Index = () => {
             Mountain & Fauna Lover
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in" itemProp="description">
-            Esplorando la bellezza selvaggia delle Alpi
+            Da un racconto di Mattioli Simone
           </p>
           <div className="flex gap-4 justify-center animate-fade-in">
             <Button 
@@ -118,10 +118,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4" itemProp="name">
-              Lavori in Evidenza
+              Contenuti in Evidenza
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto" itemProp="description">
-              Una selezione delle mie fotografie più significative
+              Dei consigli su cosa ti può interessare
             </p>
           </div>
           
