@@ -12,6 +12,20 @@ dist
 dist-ssr
 *.local
 
+# Environment variables - SENSITIVE DATA
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# API Keys and Secrets - DO NOT COMMIT
+**/credentials.json
+**/secrets.json
+**/*-secrets.json
+**/*-credentials.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +36,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OS Files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

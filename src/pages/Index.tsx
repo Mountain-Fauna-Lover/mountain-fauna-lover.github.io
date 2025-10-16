@@ -4,6 +4,11 @@ import { TbBrandTiktok } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import heroMountain from "@/assets/hero-mountain.jpg";
 import SEO from "@/components/SEO";
+import { StatCard, StatCardError } from "@/components/StatCard";
+import { useYouTubeStats } from "@/hooks/useYouTubeStats";
+import { useInstagramStats } from "@/hooks/useInstagramStats";
+import { manualStats } from "@/config/stats";
+import { formatNumber } from "@/lib/formatNumber";
 import { websiteStructuredData, organizationStructuredData, personStructuredData, faqStructuredData, parcoStelvioPlaceData, valDiRabbiPlaceData, videoObjectStructuredData } from "@/data/structuredData";
 
 const featuredVideos = [
@@ -28,6 +33,12 @@ const featuredVideos = [
 ];
 
 const Index = () => {
+  // Fetch YouTube stats dynamically
+  const { data: youtubeStats, isLoading: youtubeLoading, isError: youtubeError } = useYouTubeStats();
+
+  // Fetch Instagram stats dynamically
+  const { data: instagramStats, isLoading: instagramLoading, isError: instagramError } = useInstagramStats();
+
   const videoStructuredDataList = featuredVideos.map(video => 
     videoObjectStructuredData({
       name: video.title,
@@ -112,7 +123,82 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
+      {/* Statistics Section - Dynamic with YouTube API */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              {/* YouTube Subscribers - Dynamic */}
+              {youtubeError ? (
+                <StatCardError
+                  icon={<Youtube className="h-8 w-8 mx-auto" />}
+                  label="Iscritti YouTube"
+                  error="API non configurata"
+                  color="red"
+                />
+              ) : (
+                <StatCard
+                  icon={<Youtube className="h-8 w-8 mx-auto" />}
+                  value={youtubeLoading ? '...' : formatNumber(youtubeStats?.subscribers || 0)}
+                  label="Iscritti YouTube"
+                  color="red"
+                  isLoading={youtubeLoading}
+                />
+              )}
+
+              {/* Videos Published - Dynamic */}
+              {youtubeError ? (
+                <StatCardError
+                  icon={<Play className="h-8 w-8 mx-auto" />}
+                  label="Video Pubblicati"
+                  color="primary"
+                />
+              ) : (
+                <StatCard
+                  icon={<Play className="h-8 w-8 mx-auto" />}
+                  value={youtubeLoading ? '...' : youtubeStats?.videoCount || 0}
+                  label="Video Pubblicati"
+                  color="primary"
+                  isLoading={youtubeLoading}
+                />
+              )}
+
+              {/* Wildlife Sightings - Manual */}
+              <StatCard
+                icon={
+                  <svg className="h-8 w-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                  </svg>
+                }
+                value={`${manualStats.sightings.total}+`}
+                label="Avvistamenti"
+                color="amber"
+              />
+
+              {/* Instagram Followers - Dynamic */}
+              {instagramError ? (
+                <StatCardError
+                  icon={<Instagram className="h-8 w-8 mx-auto" />}
+                  label="Follower Instagram"
+                  error="API non configurata"
+                  color="pink"
+                />
+              ) : (
+                <StatCard
+                  icon={<Instagram className="h-8 w-8 mx-auto" />}
+                  value={instagramLoading ? '...' : formatNumber(instagramStats?.followers || 0)}
+                  label="Follower Instagram"
+                  color="pink"
+                  isLoading={instagramLoading}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Work */}
       <section className="py-24 bg-background" itemScope itemType="https://schema.org/CreativeWork">
         <div className="container mx-auto px-6">
