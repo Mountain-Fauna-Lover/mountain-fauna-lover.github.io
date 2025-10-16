@@ -266,32 +266,32 @@ const Index = () => {
             Unisciti alla community per non perdere nessuna avventura!
             </p>
             
-            <div className="flex gap-6 justify-center">
-              <a 
-                href="https://www.youtube.com/@mountainfaunalover" 
-                target="_blank" 
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center max-w-2xl mx-auto">
+              <a
+                href="https://www.youtube.com/@mountainfaunalover"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-background hover:bg-muted px-6 py-4 rounded-lg transition-colors border border-border"
+                className="flex items-center justify-center gap-3 bg-background hover:bg-muted px-6 py-4 rounded-lg transition-colors border border-border"
               >
                 <Youtube className="h-6 w-6 text-primary" />
                 <span className="font-medium">YouTube</span>
               </a>
-              
-              <a 
-                href="https://instagram.com/mountainfaunalover" 
-                target="_blank" 
+
+              <a
+                href="https://instagram.com/mountainfaunalover"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-background hover:bg-muted px-6 py-4 rounded-lg transition-colors border border-border"
+                className="flex items-center justify-center gap-3 bg-background hover:bg-muted px-6 py-4 rounded-lg transition-colors border border-border"
               >
                 <Instagram className="h-6 w-6 text-primary" />
                 <span className="font-medium">Instagram</span>
               </a>
-              
-              <a 
-                href="https://www.tiktok.com/@mountainfaunalover" 
-                target="_blank" 
+
+              <a
+                href="https://www.tiktok.com/@mountainfaunalover"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-background hover:bg-muted px-6 py-4 rounded-lg transition-colors border border-border"
+                className="flex items-center justify-center gap-3 bg-background hover:bg-muted px-6 py-4 rounded-lg transition-colors border border-border"
               >
                 <TbBrandTiktok className="h-6 w-6 text-primary" />
                 <span className="font-medium">TikTok</span>
