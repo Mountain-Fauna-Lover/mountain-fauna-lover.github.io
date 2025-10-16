@@ -7,7 +7,8 @@ import { breadcrumbStructuredData } from "@/data/structuredData";
 import { portfolioVideos } from "@/data/portfolioVideos";
 
 const Portfolio = () => {
-  const [selectedFilter, setSelectedFilter] = useState<string>("Tutti");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Tutti");
+  const [selectedPartner, setSelectedPartner] = useState<string>("Tutti");
 
   const breadcrumb = breadcrumbStructuredData([
     { name: "Home", url: "/" },
@@ -15,9 +16,13 @@ const Portfolio = () => {
   ]);
 
   const categories = ["Tutti", ...Array.from(new Set(portfolioVideos.map(v => v.category)))];
-  const filteredVideos = selectedFilter === "Tutti" 
-    ? portfolioVideos 
-    : portfolioVideos.filter(video => video.category === selectedFilter);
+  const partners = ["Tutti", ...Array.from(new Set(portfolioVideos.map(v => v.partner).filter(Boolean))) as string[]];
+
+  const filteredVideos = portfolioVideos.filter(video => {
+    const matchesCategory = selectedCategory === "Tutti" || video.category === selectedCategory;
+    const matchesPartner = selectedPartner === "Tutti" || video.partner === selectedPartner;
+    return matchesCategory && matchesPartner;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
@@ -44,19 +49,46 @@ const Portfolio = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-12 items-center justify-center">
-              <Filter className="h-5 w-5 text-muted-foreground" />
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedFilter === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedFilter(category)}
-                  className="transition-all duration-300"
-                >
-                  {category}
-                </Button>
-              ))}
+            {/* Category Filters */}
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <Filter className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm font-medium text-muted-foreground">Filtra per categoria:</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className="transition-all duration-300"
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* Partner Filters */}
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-3">
+                <Building2 className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm font-medium text-muted-foreground">Filtra per partner:</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {partners.map((partner) => (
+                  <Button
+                    key={partner}
+                    variant={selectedPartner === partner ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedPartner(partner)}
+                    className="transition-all duration-300"
+                  >
+                    {partner}
+                  </Button>
+                ))}
+              </div>
             </div>
             
             <div className="space-y-6">

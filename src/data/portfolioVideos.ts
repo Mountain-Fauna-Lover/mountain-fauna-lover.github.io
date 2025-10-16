@@ -37,26 +37,26 @@ export const portfolioVideos: PortfolioVideo[] = [
     tags: ["binocolo", "wildlife watching", "ottica professionale", "birdwatching"]
   },
   {
-    id: "avventura-ebike-ollie",
+    id: "avventura-ebike-ollin",
     title: "E-bike Adventure: Esplorando Sentieri Nascosti",
     excerpt: "Un'avventura in e-bike alla scoperta di sentieri poco battuti e panorami mozzafiato delle Dolomiti.",
-    description: "In collaborazione con Ollie, ho testato le loro e-bike in un percorso impegnativo tra le Dolomiti. Il video documenta una giornata completa di esplorazione su sentieri tecnici, mostrando come le e-bike moderne permettano di affrontare salite impegnative e raggiungere vette straordinarie. Include test di autonomia, performance e consigli per il bikepack in montagna.",
+    description: "In collaborazione con ollin, ho testato le loro e-bike in un percorso impegnativo tra le Dolomiti. Il video documenta una giornata completa di esplorazione su sentieri tecnici, mostrando come le e-bike moderne permettano di affrontare salite impegnative e raggiungere vette straordinarie. Include test di autonomia, performance e consigli per il bikepack in montagna.",
     videoId: "wQrx2422wD8",
     date: "12 Settembre 2024",
     category: "Avventura",
-    partner: "Ollie",
+    partner: "ollin",
     location: "Dolomiti, Trentino",
-    tags: ["ebike", "ollie", "mtb", "dolomiti", "bikepack"]
+    tags: ["ebike", "ollin", "mtb", "dolomiti", "bikepack"]
   },
   {
     id: "mobilita-sostenibile-montagna",
     title: "Mobilità Sostenibile in Montagna",
     excerpt: "Come le e-bike stanno rivoluzionando il modo di vivere e esplorare la montagna in modo ecologico.",
-    description: "Un progetto in collaborazione con Ollie per promuovere la mobilità sostenibile in montagna. Il video esplora come le e-bike permettano di vivere esperienze autentiche riducendo l'impatto ambientale. Interviste con guide alpine, esperti di mobilità sostenibile e testimonianze di chi ha scelto questo mezzo per esplorare i territori montani.",
+    description: "Un progetto in collaborazione con ollin per promuovere la mobilità sostenibile in montagna. Il video esplora come le e-bike permettano di vivere esperienze autentiche riducendo l'impatto ambientale. Interviste con guide alpine, esperti di mobilità sostenibile e testimonianze di chi ha scelto questo mezzo per esplorare i territori montani.",
     videoId: "VqqxMAQJ0oo",
     date: "28 Luglio 2024",
     category: "Avventura",
-    partner: "Ollie",
+    partner: "ollin",
     location: "Alpi Trentine",
     tags: ["sostenibilità", "ebike", "mobilità", "ambiente"]
   },

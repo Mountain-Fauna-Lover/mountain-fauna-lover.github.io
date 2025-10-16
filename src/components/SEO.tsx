@@ -25,13 +25,13 @@ const SEO = ({
   keywords = "avvistamenti cervi trentino, parco nazionale stelvio fauna, val di rabbi wildlife, bramito cervi alpi, fotografia naturalistica trentino, stambecchi parco stelvio, ebike montagna trentino, volpi alpine, cervi val di rabbi, fauna selvatica alpi trentine, wildlife photography stelvio, Simone Mattioli fotografo, trekking wildlife trentino, natura parco stelvio, conservazione fauna alpina, camosci trentino, marmotte alpine, aquila reale trentino, dove vedere cervi trentino, video cervi youtube",
   canonical,
   ogType = "website",
-  ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogImage = "/og-image.png",
   twitterCard = "summary_large_image",
   structuredData,
   noindex = false,
   article,
 }: SEOProps) => {
-  const siteUrl = "https://mountainfaunalover.lovable.app";
+  const siteUrl = "https://mountainfaunalover.com";
   const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
   const fullTitle = title.includes("Mountain & Fauna Lover") ? title : `${title} | Mountain & Fauna Lover`;
 

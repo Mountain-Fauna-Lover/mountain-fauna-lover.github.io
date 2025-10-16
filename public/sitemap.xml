@@ -5,7 +5,7 @@
   
   <!-- Home Page -->
   <url>
-    <loc>https://mountainfaunalover.lovable.app/</loc>
+    <loc>https://mountainfaunalover.com/</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -20,7 +20,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://mountainfaunalover.lovable.app/about</loc>
+    <loc>https://mountainfaunalover.com/about</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -28,22 +28,22 @@
   
   <!-- Portfolio Page -->
   <url>
-    <loc>https://mountainfaunalover.lovable.app/portfolio</loc>
+    <loc>https://mountainfaunalover.com/portfolio</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://mountainfaunalover.lovable.app/assets/wildlife-deer.jpg</image:loc>
+      <image:loc>https://mountainfaunalover.com/assets/wildlife-deer.jpg</image:loc>
       <image:title>Cervo nella nebbia - Parco Stelvio</image:title>
       <image:caption>Avvistamento cervo nella nebbia mattutina nelle Alpi trentine</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://mountainfaunalover.lovable.app/assets/wildlife-goat.jpg</image:loc>
+      <image:loc>https://mountainfaunalover.com/assets/wildlife-goat.jpg</image:loc>
       <image:title>Stambecco alpino - Val di Rabbi</image:title>
       <image:caption>Stambecco su cresta rocciosa in Val di Rabbi</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://mountainfaunalover.lovable.app/assets/wildlife-fox.jpg</image:loc>
+      <image:loc>https://mountainfaunalover.com/assets/wildlife-fox.jpg</image:loc>
       <image:title>Volpe rossa alpina - Trentino</image:title>
       <image:caption>Volpe rossa tra i prati alpini trentini</image:caption>
     </image:image>
@@ -51,7 +51,7 @@
   
   <!-- Blog Page -->
   <url>
-    <loc>https://mountainfaunalover.lovable.app/blog</loc>
+    <loc>https://mountainfaunalover.com/blog</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -59,7 +59,7 @@
   
   <!-- Links Page -->
   <url>
-    <loc>https://mountainfaunalover.lovable.app/links</loc>
+    <loc>https://mountainfaunalover.com/links</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -67,21 +67,21 @@
   
   <!-- Blog Posts -->
   <url>
-    <loc>https://mountainfaunalover.lovable.app/blog/primo-incontro-cervi</loc>
+    <loc>https://mountainfaunalover.com/blog/primo-incontro-cervi</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://mountainfaunalover.lovable.app/blog/fotografia-naturalistica</loc>
+    <loc>https://mountainfaunalover.com/blog/fotografia-naturalistica</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://mountainfaunalover.lovable.app/blog/conservazione-fauna</loc>
+    <loc>https://mountainfaunalover.com/blog/conservazione-fauna</loc>
     <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

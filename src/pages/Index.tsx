@@ -43,7 +43,7 @@ const Index = () => {
     "@type": "CollectionPage",
     "name": "Mountain & Fauna Lover - Homepage",
     "description": "Esplora la fauna selvatica delle Alpi trentine attraverso fotografie, video e guide complete",
-    "url": "https://mountainfaunalover.lovable.app",
+    "url": "https://mountainfaunalover.com",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": featuredVideos.length,
