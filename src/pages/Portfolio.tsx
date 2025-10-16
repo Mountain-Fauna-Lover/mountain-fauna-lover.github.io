@@ -38,7 +38,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <Breadcrumbs items={[{ label: "Portfolio", href: "/portfolio" }]} />
           
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 relative">
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/5 via-accent/5 to-secondary/5 blur-3xl rounded-full" />
               <h1 className="font-serif text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-foreground bg-clip-text text-transparent mb-6">
@@ -91,11 +91,11 @@ const Portfolio = () => {
               </div>
             </div>
             
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {filteredVideos.map((video, index) => (
-                <article 
+                <article
                   key={video.id}
-                  className="group cursor-pointer"
+                  className="group cursor-pointer animate-fade-in"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <a 
@@ -138,52 +138,57 @@ const Portfolio = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="relative p-8">
-                        <div className="flex items-center gap-4 mb-4 flex-wrap">
-                          <span className="text-xs font-medium bg-gradient-to-r from-primary/20 to-accent/20 text-primary px-4 py-1.5 rounded-full border border-primary/20">
+                      <div className="relative p-6">
+                        <div className="flex items-center gap-3 mb-3 flex-wrap">
+                          <span className="text-xs font-medium bg-gradient-to-r from-primary/20 to-accent/20 text-primary px-3 py-1.5 rounded-full border border-primary/20">
                             {video.category}
                           </span>
                           {video.partner && (
-                            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                               <Building2 className="h-3.5 w-3.5" />
                               <span className="font-medium">{video.partner}</span>
                             </div>
                           )}
                         </div>
-                        
-                        <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+
+                        <h2 className="font-serif text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">
                           {video.title}
                         </h2>
-                        
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-3 line-clamp-2">
                           {video.excerpt}
                         </p>
 
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4 flex-wrap">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="h-4 w-4" />
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3 flex-wrap">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="h-3.5 w-3.5" />
                             <span>{video.date}</span>
                           </div>
                           <span>•</span>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4" />
+                          <div className="flex items-center gap-1.5">
+                            <MapPin className="h-3.5 w-3.5" />
                             <span>{video.location}</span>
                           </div>
                         </div>
 
                         {/* Tags */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {video.tags.map((tag) => (
-                            <span 
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          {video.tags.slice(0, 3).map((tag) => (
+                            <span
                               key={tag}
-                              className="text-xs bg-muted/50 text-muted-foreground px-3 py-1 rounded-full"
+                              className="text-xs bg-muted/50 text-muted-foreground px-2.5 py-1 rounded-full"
                             >
                               #{tag}
                             </span>
                           ))}
+                          {video.tags.length > 3 && (
+                            <span className="text-xs text-muted-foreground px-2.5 py-1">
+                              +{video.tags.length - 3}
+                            </span>
+                          )}
                         </div>
-                        
-                        <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-4 transition-all duration-300">
+
+                        <div className="flex items-center gap-2 text-sm text-primary font-medium group-hover:gap-3 transition-all duration-300">
                           <span>Guarda il video</span>
                           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </div>

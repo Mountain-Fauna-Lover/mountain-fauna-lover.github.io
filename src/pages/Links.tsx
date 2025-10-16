@@ -54,7 +54,7 @@ const Links = () => {
               <p className="text-muted-foreground mb-6 text-sm">
                 Per collaborazioni, domande o consigli
               </p>
-              <a 
+              <a
                 href="mailto:deerfaunalover@gmail.com"
                 className="inline-block"
               >

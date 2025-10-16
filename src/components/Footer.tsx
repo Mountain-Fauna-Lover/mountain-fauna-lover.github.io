@@ -1,4 +1,4 @@
-import { Youtube, Instagram, Mountain } from "lucide-react";
+import { Youtube, Instagram, Mountain, Mail } from "lucide-react";
 import { TbBrandTiktok } from "react-icons/tb";
 
 const Footer = () => {
@@ -71,9 +71,16 @@ const Footer = () => {
             <h3 className="font-semibold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Contatti
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Per collaborazioni e informazioni, contattami sui social.
+            <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+              Per collaborazioni e informazioni:
             </p>
+            <a
+              href="mailto:deerfaunalover@gmail.com"
+              className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              <span className="group-hover:underline">deerfaunalover@gmail.com</span>
+            </a>
           </div>
         </div>
         

@@ -1,12 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
-import { Mountain } from "lucide-react";
+import { Mountain, Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const location = useLocation();
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const isActive = (path: string) => location.pathname === path;
-  
+
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
@@ -14,20 +16,42 @@ const Navbar = () => {
     { path: "/blog", label: "Blog" },
     { path: "/links", label: "Links" },
   ];
-  
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group relative">
             <div className="absolute -inset-2 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity blur" />
-            <Mountain className="h-6 w-6 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 relative z-10" />
-            <span className="font-serif text-xl font-bold text-foreground relative z-10 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+            <Mountain className="h-5 w-5 sm:h-6 sm:w-6 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 relative z-10" />
+            <span className="font-serif text-base sm:text-xl font-bold text-foreground relative z-10 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text hidden sm:inline">
               Mountain & Fauna Lover
             </span>
+            <span className="font-serif text-base font-bold text-foreground relative z-10 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text sm:hidden">
+              MFL
+            </span>
           </Link>
-          
-          <div className="flex items-center gap-6">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -42,12 +66,50 @@ const Navbar = () => {
                 {isActive(link.path) && (
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full" />
                 )}
-                <span className="absolute inset-0 bg-primary/5 rounded-md scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
               </Link>
             ))}
             <ThemeToggle />
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden fixed inset-0 top-[57px] sm:top-[65px] bg-background/95 backdrop-blur-xl z-40 animate-fade-in">
+            <div className="container mx-auto px-4 py-8">
+              <div className="flex flex-col space-y-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`text-lg font-medium py-3 px-4 rounded-lg transition-all duration-300 ${
+                      isActive(link.path)
+                        ? "bg-primary/10 text-primary"
+                        : "text-muted-foreground hover:text-primary hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
