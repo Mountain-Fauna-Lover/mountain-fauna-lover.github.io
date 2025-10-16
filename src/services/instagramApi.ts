@@ -5,15 +5,21 @@ import type {
   InstagramLongLivedTokenResponse,
   InstagramTokenRefreshResponse
 } from '@/types/instagram';
+import { statsCache } from './statsCache';
 
 /**
  * Instagram Graph API Service
  *
  * Handles all interactions with Instagram Graph API including:
- * - Fetching business account statistics (followers, media count)
+ * - Fetching business account statistics with 24h localStorage cache
  * - Token management (long-lived tokens)
  * - Error handling
  * - Rate limiting awareness
+ *
+ * Cache Strategy:
+ * - Checks localStorage first for cached stats
+ * - Only calls API if cache is missing or expired (>24h)
+ * - Saves fresh data to cache after successful API call
  *
  * Requirements:
  * - Instagram Business or Creator account
@@ -51,12 +57,31 @@ class InstagramApiService {
   }
 
   /**
-   * Fetch Instagram Business Account statistics
+   * Fetch Instagram Business Account statistics with cache
+   *
+   * Strategy:
+   * 1. Check localStorage cache first
+   * 2. If cache valid (<24h), return cached data instantly
+   * 3. If cache expired or missing, call API and update cache
    *
    * @returns Promise with account statistics
    * @throws Error if API call fails or configuration is invalid
    */
   async fetchAccountStats(): Promise<InstagramStats> {
+    // Check cache first
+    const cached = statsCache.getInstagramStats();
+    if (cached) {
+      console.log('⚡ Using cached Instagram stats (instant load)');
+      return {
+        followers: cached.followers,
+        posts: cached.posts,
+        username: cached.username,
+        lastFetched: new Date(cached.metadata.lastUpdated),
+      };
+    }
+
+    // Cache miss or expired - fetch from API
+    console.log('🌐 Fetching fresh Instagram stats from API...');
     this.validateConfig();
 
     const url = new URL(`${INSTAGRAM_GRAPH_API_BASE_URL}/${this.instagramBusinessAccountId}`);
@@ -85,7 +110,12 @@ class InstagramApiService {
 
       const data: InstagramBusinessAccount = await response.json();
 
-      return this.parseAccountStats(data);
+      const stats = this.parseAccountStats(data);
+
+      // Save to cache for next time
+      statsCache.setInstagramStats(stats);
+
+      return stats;
     } catch (error) {
       if (error instanceof Error) {
         throw error;

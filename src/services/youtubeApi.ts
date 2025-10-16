@@ -1,12 +1,18 @@
 import type { YouTubeChannelResponse, YouTubeStats, YouTubeStatsError } from '@/types/youtube';
+import { statsCache } from './statsCache';
 
 /**
  * YouTube Data API v3 Service
  *
  * Handles all interactions with YouTube API including:
- * - Fetching channel statistics
+ * - Fetching channel statistics with 24h localStorage cache
  * - Error handling
  * - Rate limiting awareness
+ *
+ * Cache Strategy:
+ * - Checks localStorage first for cached stats
+ * - Only calls API if cache is missing or expired (>24h)
+ * - Saves fresh data to cache after successful API call
  */
 
 const YOUTUBE_API_BASE_URL = 'https://www.googleapis.com/youtube/v3';
@@ -38,12 +44,31 @@ class YouTubeApiService {
   }
 
   /**
-   * Fetch channel statistics from YouTube API
+   * Fetch channel statistics from YouTube API with cache
+   *
+   * Strategy:
+   * 1. Check localStorage cache first
+   * 2. If cache valid (<24h), return cached data instantly
+   * 3. If cache expired or missing, call API and update cache
    *
    * @returns Promise with channel statistics
    * @throws Error if API call fails or configuration is invalid
    */
   async fetchChannelStats(): Promise<YouTubeStats> {
+    // Check cache first
+    const cached = statsCache.getYouTubeStats();
+    if (cached) {
+      console.log('⚡ Using cached YouTube stats (instant load)');
+      return {
+        subscribers: cached.subscribers,
+        videoCount: cached.videoCount,
+        viewCount: cached.viewCount,
+        lastFetched: new Date(cached.metadata.lastUpdated),
+      };
+    }
+
+    // Cache miss or expired - fetch from API
+    console.log('🌐 Fetching fresh YouTube stats from API...');
     this.validateConfig();
 
     const url = new URL(`${YOUTUBE_API_BASE_URL}/channels`);
@@ -70,7 +95,12 @@ class YouTubeApiService {
         throw new Error('Channel not found. Please check your Channel ID.');
       }
 
-      return this.parseChannelStats(data);
+      const stats = this.parseChannelStats(data);
+
+      // Save to cache for next time
+      statsCache.setYouTubeStats(stats);
+
+      return stats;
     } catch (error) {
       if (error instanceof Error) {
         throw error;
