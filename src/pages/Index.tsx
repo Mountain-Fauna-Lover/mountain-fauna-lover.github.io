@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Youtube, Instagram, Play } from "lucide-react";
+import { ArrowRight, Youtube, Instagram, Play, Eye } from "lucide-react";
 import { TbBrandTiktok } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import heroMountain from "@/assets/hero-mountain.jpg";
@@ -165,17 +165,22 @@ const Index = () => {
                 />
               )}
 
-              {/* Wildlife Sightings - Manual */}
-              <StatCard
-                icon={
-                  <svg className="h-8 w-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-                  </svg>
-                }
-                value={`${manualStats.sightings.total}+`}
-                label="Avvistamenti"
-                color="amber"
-              />
+              {/* YouTube Total Views - Dynamic */}
+              {youtubeError ? (
+                <StatCardError
+                  icon={<Eye className="h-8 w-8 mx-auto" />}
+                  label="Visualizzazioni Youtube"
+                  color="amber"
+                />
+              ) : (
+                <StatCard
+                  icon={<Eye className="h-8 w-8 mx-auto" />}
+                  value={youtubeLoading ? '...' : formatNumber(youtubeStats?.viewCount || 0)}
+                  label="Visualizzazioni Youtube"
+                  color="amber"
+                  isLoading={youtubeLoading}
+                />
+              )}
 
               {/* Instagram Followers - Dynamic */}
               {instagramError ? (
