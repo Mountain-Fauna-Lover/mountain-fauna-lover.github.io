@@ -16,19 +16,19 @@ const featuredVideos = [
     id: 1,
     videoId: "AlRfDBPqy_I",
     title: "La Prima Volta dei Cervi 🦌",
-    description: "Una reazione emozionante all'incontro con i cervi in natura"
+    description: "Una reazione emozionante della mia ragazza al primo incontro con i cervi"
   },
   {
     id: 2,
     videoId: "wQrx2422wD8",
-    title: "Esplorazione Alpina",
-    description: "Avventure e scoperte tra le montagne"
+    title: "Evento Euromix Motors in OFF-ROAD",
+    description: "Avventure con i DEFENDER in un campo di fuori strada"
   },
   {
     id: 3,
     videoId: "VqqxMAQJ0oo",
-    title: "Fauna Selvatica",
-    description: "Incontri ravvicinati con gli animali delle Alpi"
+    title: "Il BRAMITO Del Cervo Maschio",
+    description: "Incontro ravvicinato con un cervo maschio da 13 punte"
   },
 ];
 
@@ -260,11 +260,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
-              Seguimi nelle Mie Avventure
+              Rimani Aggiornato Sulle Mie Avventure
             </h2>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Condivido regolarmente contenuti su YouTube, Instagram e TikTok. 
-              Unisciti alla community per non perdere nessuna avventura!
+            Unisciti alla community per non perdere nessuna avventura!
             </p>
             
             <div className="flex gap-6 justify-center">
