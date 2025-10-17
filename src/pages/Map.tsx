@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon, LatLngExpression } from 'leaflet';
 import { wildlifeSightings, WildlifeSighting } from '@/data/wildlifeSightings';
+import SEO from '@/components/SEO';
+import { breadcrumbSchema, createPlaceSchema, mapFaqSchema } from '@/utils/structuredData';
 import 'leaflet/dist/leaflet.css';
 
 // Fix for default marker icons in React-Leaflet
@@ -36,8 +38,48 @@ const Map = () => {
   // Center on Trentino, Italy
   const center: LatLngExpression = [46.4336, 11.1694];
 
+  // Structured data for the map page
+  const mapBreadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://mountainfaunalover.com/" },
+    { name: "Mappa Avvistamenti", url: "https://mountainfaunalover.com/map" }
+  ]);
+
+  const placesStructuredData = wildlifeSightings.map(sighting =>
+    createPlaceSchema({
+      name: sighting.location,
+      description: `${sighting.species} - ${sighting.description}`,
+      latitude: sighting.coordinates[0],
+      longitude: sighting.coordinates[1],
+      address: sighting.location
+    })
+  );
+
+  const combinedStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [mapBreadcrumbs, mapFaqSchema, ...placesStructuredData]
+  };
+
   return (
     <div className="min-h-screen pt-16 pb-20 bg-background">
+      <SEO
+        title="Mappa Avvistamenti Fauna Alpina Trentino"
+        description="Mappa interattiva degli avvistamenti di fauna selvatica in Trentino. Scopri dove fotografare cervi, stambecchi, camosci, aquile e volpi nel Parco Nazionale dello Stelvio e Val di Rabbi."
+        keywords={[
+          "mappa avvistamenti cervi trentino",
+          "dove vedere fauna alpina",
+          "wildlife hotspots trentino",
+          "parco stelvio avvistamenti",
+          "val di rabbi fauna",
+          "mappa fotografica wildlife",
+          "luoghi cervi trentino",
+          "avvistamenti stambecchi",
+          "geographic wildlife map"
+        ]}
+        canonical="/map"
+        ogType="website"
+        ogImage="/og-map.jpg"
+        structuredData={combinedStructuredData}
+      />
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 animate-fade-in">

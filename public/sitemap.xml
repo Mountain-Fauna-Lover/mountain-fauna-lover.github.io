@@ -3,16 +3,16 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   
-  <!-- Home Page -->
+  <!-- Home Page - Wildlife Photography, Trekking & E-bike Tours -->
   <url>
     <loc>https://mountainfaunalover.com/</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/AlRfDBPqy_I/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>La Prima Volta dei Cervi - Avvistamento Parco Stelvio</video:title>
-      <video:description>Emozionante primo avvistamento di cervi nel Parco Nazionale dello Stelvio</video:description>
+      <video:title>La Prima Volta dei Cervi - Avvistamento Parco Stelvio - Trekking Val di Rabbi</video:title>
+      <video:description>Wildlife photography e trekking guidato nel Parco Nazionale dello Stelvio. Tour guidati in Val di Rabbi con avvistamenti cervi e fauna alpina. E-bike tours Val di Sole.</video:description>
       <video:content_loc>https://www.youtube.com/watch?v=AlRfDBPqy_I</video:content_loc>
       <video:player_loc>https://www.youtube.com/embed/AlRfDBPqy_I</video:player_loc>
     </video:video>
@@ -64,7 +64,23 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
+  <!-- Map Page - Wildlife Sightings -->
+  <url>
+    <loc>https://mountainfaunalover.com/map</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Partners Page -->
+  <url>
+    <loc>https://mountainfaunalover.com/partners</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://mountainfaunalover.com/blog/primo-incontro-cervi</loc>

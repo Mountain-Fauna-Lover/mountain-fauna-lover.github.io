@@ -1,4 +1,31 @@
+import SEO from '@/components/SEO';
+import { breadcrumbSchema, organizationSchema, partnersFaqSchema } from '@/utils/structuredData';
+
 const Partners = () => {
+  // Structured data
+  const partnersBreadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://mountainfaunalover.com/" },
+    { name: "Partner", url: "https://mountainfaunalover.com/partners" }
+  ]);
+
+  const partnersStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      partnersBreadcrumbs,
+      organizationSchema,
+      partnersFaqSchema,
+      {
+        "@type": "CollectionPage",
+        name: "Partner e Collaborazioni",
+        description: "Partner tecnici e collaborazioni professionali per documentazione wildlife",
+        about: {
+          "@type": "Thing",
+          name: "Wildlife Photography Partnerships"
+        }
+      }
+    ]
+  };
+
   const partners = [
     {
       name: "Swarovski Optik",
@@ -35,6 +62,25 @@ const Partners = () => {
 
   return (
     <div className="min-h-screen pt-16 pb-20 bg-background">
+      <SEO
+        title="Partner e Collaborazioni Wildlife Photography"
+        description="Partner ufficiali di Mountain & Fauna Lover: Swarovski Optik per l'ottica professionale, ollin.co per soluzioni digitali, Euromix Motors Trento per mobilità elettrica sostenibile in montagna."
+        keywords={[
+          "Swarovski Optik partnership",
+          "wildlife photography equipment",
+          "ollin.co",
+          "Euromix Motors Trento",
+          "e-bike montagna",
+          "attrezzatura fotografica natura",
+          "partner tecnici wildlife",
+          "binocoli professionali",
+          "mobilità sostenibile montagna"
+        ]}
+        canonical="/partners"
+        ogType="website"
+        ogImage="/og-partners.jpg"
+        structuredData={partnersStructuredData}
+      />
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
