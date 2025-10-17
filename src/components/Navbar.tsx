@@ -96,25 +96,26 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 z-40 animate-fade-in">
-          {/* Backdrop */}
+          {/* Backdrop - Dark overlay */}
           <div
-            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
             onClick={() => setIsMenuOpen(false)}
           />
 
-          {/* Menu Content */}
-          <div className="relative top-[57px] sm:top-[65px] bg-background border-b border-border shadow-lg">
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col space-y-2">
-                {navLinks.map((link) => (
+          {/* Menu Content - High contrast dropdown */}
+          <div className="relative top-[57px] sm:top-[65px] bg-background shadow-2xl border-b-4 border-primary">
+            <div className="container mx-auto px-6 py-8">
+              <div className="flex flex-col space-y-3">
+                {navLinks.map((link, index) => (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-base font-medium py-3 px-4 rounded-lg transition-all duration-200 ${
+                    className={`text-lg font-semibold py-4 px-6 rounded-xl transition-all duration-200 animate-fade-in ${
                       isActive(link.path)
-                        ? "bg-primary text-primary-foreground shadow-sm"
-                        : "text-foreground hover:bg-muted hover:text-primary"
+                        ? "bg-primary text-primary-foreground shadow-lg scale-105"
+                        : "bg-muted/50 text-foreground hover:bg-primary/20 hover:text-primary hover:scale-105 hover:shadow-md"
                     }`}
+                    style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {link.label}
                   </Link>
